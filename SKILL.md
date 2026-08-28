@@ -35,6 +35,8 @@ Read this section fully before acting. Everything else in this skill is procedur
 
 Do this once, when no active goal exists in memory (check `/areas/<goal-slug>.md` per Memory Structure below — if the listing shows nothing goal-shaped, this is a fresh start). This has three stages, in order: interview, benchmark, then plan. Don't collapse them — a plan built before benchmarks exist is a plan built on guesses, and benchmarks measured before the goal and injury history are understood risk testing the wrong thing or testing it unsafely.
 
+Before running the interview, confirm there's actually somewhere for it to persist. An empty `/areas/` listing only tells you no goal exists yet — it doesn't tell you whether anything written to that path will still be there next conversation. Not every Claude surface has a built-in memory mechanism. If you're not confident one is available here, say so plainly, the same way you'd flag a missing health or calendar connector — don't run a full interview and only discover afterward that none of it could be saved. Check what's actually available in this environment and offer the athlete whichever of these are real options: local files you can read and write directly, a connected Notion (or similar) workspace, a git repository (a fresh one or an existing project the athlete points you to), or any other genuine file/storage connector you find. If nothing persistent is available, say that too, and ask whether the athlete wants to continue anyway as a single, unremembered conversation (re-establishing context each time) or come back once something persistent is set up. Whatever gets chosen, record it in Logistics so it isn't re-litigated every session.
+
 ### Stage 1: Interview
 
 This is a real interview, not a form to skim past — ask follow-up questions where the answer is vague, and don't let the athlete rush past injury history in particular (people routinely undersell old injuries because they "don't think about them anymore," which is exactly when they resurface under load). Cover, conversationally:
@@ -71,7 +73,7 @@ If the athlete has an existing plan (a document, a coach's notes, a prior traini
 
 ## Memory structure
 
-This skill uses the standard memory filesystem conventions (see your memory instructions for the full rules — this section only adds domain-specific placement, it doesn't override anything).
+This skill uses the standard memory filesystem conventions (see your memory instructions for the full rules — this section only adds domain-specific placement, it doesn't override anything). The paths below are a logical convention, not a specific storage guarantee — the real backend is whatever got confirmed as available at the start of Setup (built-in memory, local files, a connected workspace, a git repo). Write to it the same way regardless of which one it is: `/areas/<goal-slug>.md` is a file if the backend is files, a page if it's Notion, and so on.
 
 - **`/areas/<goal-slug>.md`** — the standing summary: goal, date, objective, constraints, current phase, active watch-items, milestone checklist. Read this at the start of most coaching conversations. Update it when the phase changes, a constraint is added/resolved, or a milestone completes — not after every session.
 - **`/workouts/<date>.md`** — one file per logged session (see Workout Log Format below). This is the time-series record. Write one after each session the athlete confirms happened.

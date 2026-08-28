@@ -44,6 +44,10 @@ stack grip-intensive sessions two days running"). This is where the
 skill accumulates what it's learned about THIS athlete specifically.>
 
 ## Logistics
+- Memory backend: <what this and future files are actually stored in —
+  built-in memory, local files, a connected Notion workspace, a git
+  repo, etc. — confirmed at the start of Setup, so it isn't re-asked
+  every session>
 - Data sources: <what's connected — health app, manual reporting, etc.>
 - Calendar convention: <how sessions get scheduled/titled, if the
   athlete has a preference>
