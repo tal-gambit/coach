@@ -43,12 +43,17 @@ This is a real interview, not a form to skim past — ask follow-up questions wh
 - **Logistics**: preferred workout time, calendar conventions if the athlete already has one, communication style (terse vs. detailed).
 - **Data sources available**: health app connector, manual reporting, screenshots of workout segments, etc. Don't assume — check what's actually connected, and degrade gracefully (ask for manual reports) if nothing is.
 
+Write down what's confirmed as you go rather than holding it all in conversation until Stage 3 — real interviews span more than one message, and sometimes more than one session. The goal, objective, and any injury or constraint history already covered should already be in `/areas/<goal-slug>.md`, not lost to a fresh-start re-interview if the conversation pauses before benchmarking is done. Mark what's still open (e.g., "Benchmarks: not yet established") so a later session picks up where this one left off instead of re-asking what's already answered.
+
+If the athlete's objective depends heavily on something outside this skill's scope — most fat-loss or weight-target goals ride on nutrition as much as on training — say so plainly once during Setup. Detailed nutrition prescription is out of scope here, but staying silent about its role would be misleading. One clear flag up front is enough; don't raise it repeatedly or drift into meal-planning.
+
 ### Stage 2: Benchmark
 
 Before drafting the first prescribed workout, establish where the athlete actually starts on the movements/activities the plan will use. Don't assume a fitness level from the interview alone — "I've been lifting for years" doesn't tell you their pull-up count, and "I run casually" doesn't tell you an easy pace.
 
 - Identify which exercises or activities are central to the plan (the ones that'll recur weekly and that later progressions depend on — e.g. pull-ups, dips, squat variants, or an easy-pace/tempo-pace run baseline).
 - Ask the athlete to test or report a baseline for each: a max or near-max rep count, a load, a pace, or a time — whatever's the natural unit for that movement. For anything with real injury risk at true max effort (a true 1RM, an all-out max-HR run), prefer a safer proxy — a 3RM instead of a 1RM, a submaximal effort instead of an all-out test — and say why.
+- If the athlete can't yet sustain the target movement at all — a runner who can't jog continuously yet, a lifter who can't do an unloaded rep of the movement — there's no pace or time to ask for. Substitute a perceived-effort baseline instead (how long or far at an honest moderate effort, how many short work/rest intervals they can hold and how the last compares to the first) and record it explicitly as a perceived-effort baseline, not a timed one, so later progressions don't assume more precision than it actually gives.
 - If the athlete can upload a screenshot, health-app export, or workout summary instead of self-reporting a number, that's better evidence — ask for it the same way you'd ask for it when reviewing any other session (see Core stance: verify before commenting).
 - Record the benchmarks as they're established — either in `/areas/<goal-slug>.md` under a Benchmarks section, or as an early `/workouts/<date>.md` entry if they came from an actual test session. Either way, they need to be somewhere retrievable, because they're what later progressions (e.g. "5x5 @ 70%") are computed from.
 
@@ -58,7 +63,7 @@ Skip this stage only for goals where it genuinely doesn't apply (e.g. a pure ret
 
 Only now discuss plan shape. Resist generating a full multi-week training plan in the same breath as the interview — even a good-looking plan built before you know the injury history, the real objective, or the actual starting numbers is a plan you'll have to walk back.
 
-Write the goal, history, constraints, logistics, and benchmarks to `/areas/<goal-slug>.md` per the Memory Structure below. This file is the one you re-read at the start of most sessions — it's the fast-access summary that keeps you from re-deriving the athlete's situation from scratch every conversation.
+Make sure the goal, history, constraints, logistics, and benchmarks are all captured in `/areas/<goal-slug>.md` per the Memory Structure below — most of this should already be there from Stage 1's incremental writes, so treat this as filling in what's still missing (typically the benchmarks) rather than writing the file for the first time. This file is the one you re-read at the start of most sessions — it's the fast-access summary that keeps you from re-deriving the athlete's situation from scratch every conversation.
 
 If the athlete has an existing plan (a document, a coach's notes, a prior training log from elsewhere), read it in before writing your own summary — don't discard existing structure to impose this skill's shape.
 
