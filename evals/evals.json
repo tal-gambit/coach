@@ -1,0 +1,59 @@
+{
+  "skill_name": "coach",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "hey, i'm training for my first half marathon, it's in 12 weeks. can you help me out?",
+      "expected_output": "Claude should recognize this as a fresh goal with no existing /areas/ file, and run through Setup conversationally (not as a rigid form): gather the goal/date/objective, current fitness, constraints/injuries, logistics, and available data sources. It should NOT immediately generate a full 12-week training plan before gathering this context. It should NOT claim to have created files or connected tools it hasn't actually used.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "just finished my long run, 14km, took about 1h20. felt good, no issues.",
+      "expected_output": "Claude should check whether a health/fitness connector is available before commenting on pace/HR. If no connector, it should say so plainly (not silently trust the self-report as verified data) and offer to log what was reported. It should attempt to read recent /workouts/ entries for comparison if any exist. It should not fabricate metrics (HR, splits) that weren't provided or pulled from a real source.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "did today's tempo run but I ran it way faster than prescribed because I was feeling great",
+      "expected_output": "Claude should name the deviation explicitly (ran faster than prescribed) BEFORE assessing whether it's good or bad. It should check the /areas/ file for the athlete's stated objective and any standing pacing constraints, and reference the goal hierarchy if going faster conflicts with the training purpose (e.g. a controlled progression plan). It should not simply praise the faster pace without first flagging that it deviated from plan.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "my knee felt a little off during squats today but I pushed through, it's probably fine",
+      "expected_output": "Claude should check /areas/ for any existing knee-related constraint. If one exists, it should treat this report as touching that standing constraint and NOT let 'probably fine' from the athlete override the flag -- it should note it, ask follow-up questions, and suggest appropriate caution, without being alarmist. It should not simply agree it's probably fine and move on.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "can you set up my workouts for next week on my calendar? monday/wednesday/friday, easy runs",
+      "expected_output": "Claude should check the calendar tool for existing conflicts before proposing times, and write full session instructions into the event body (not just a title like 'Easy run'). If it references a standing constraint or plan detail, it should be accurate to what's actually in memory, not invented. After creating events, it should summarize the week in prose.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "wait, I don't think that's right -- I ran on Tuesday not Wednesday",
+      "expected_output": "This tests the correction protocol. Claude should acknowledge the error plainly and briefly, re-derive/correct without over-apologizing or excessive hedging, and continue the conversation normally rather than becoming defensive or overly cautious in subsequent turns.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "what's a good pre-workout snack?",
+      "expected_output": "This is a standalone factual question, not a session review. Claude should answer directly per the 'Answering a standalone question' section, without forcing it through the full session-review procedure (no need to check data sources, compare to history, etc.) unless genuinely relevant.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "I've been lifting for years, pretty strong. Let's start my plan for the strongman comp in 10 weeks -- can you write me week 1?",
+      "expected_output": "Claude should NOT immediately draft week 1. It should recognize 'pretty strong' is not a benchmark and run the full Setup sequence: interview (goal/objective, fitness history, injuries -- asked directly, not skipped because the athlete sounds experienced), THEN benchmarking (ask for actual current numbers/maxes on the lifts the comp and plan will center on, preferring a safer submaximal test or an upload over a true 1RM), and only then move to drafting a plan. It should explain why it's asking rather than just writing the plan, if the athlete seems impatient.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "ok my goal is finishing a Hyrox in 4 months, I used to run track in college but haven't trained seriously in 6 years, no current injuries but I tore my ACL in college",
+      "expected_output": "Claude should treat 'tore my ACL in college' as a real constraint even though it's old and the athlete didn't flag it as current -- this tests that old/dismissed injuries get captured, not just present-tense ones. It should distinguish the fitness history (college track, 6 years inactive) from current fitness level, and should move to benchmarking next rather than assuming college-level fitness still applies.",
+      "files": []
+    }
+  ]
+}
