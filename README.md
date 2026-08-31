@@ -21,12 +21,12 @@ This skill doesn't build any of that — it just gives Claude a disciplined *pro
 
 ## How setup works
 
-Starting a new goal runs three stages, in order, and the skill won't skip ahead:
+Starting a new goal runs three Setup stages, in order, and the skill won't skip ahead. Once that's done, it stays with you for the rest of the block:
 
 1. **Interview** — goal, objective, fitness history, injuries (current and past), logistics, data sources. Asked directly, not assumed from how experienced you sound.
 2. **Benchmark** — before the first workout is prescribed, it establishes real current numbers for whatever the plan will center on (reps, load, pace), preferring a safer submaximal test or an uploaded data source over a self-reported guess or a risky true-max test.
 3. **Plan** — only now does it discuss the actual training block.
-4. **Track** - receive updates in chat or from APIs, adjust training and support you throughout. 
+4. **Track** — from here on, it reviews updates you send in chat or pull from a connected data source, catches drift from the plan, and adjusts as the block progresses.
 
 ## Installation
 
