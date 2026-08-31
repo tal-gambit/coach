@@ -26,6 +26,7 @@ Starting a new goal runs three stages, in order, and the skill won't skip ahead:
 1. **Interview** — goal, objective, fitness history, injuries (current and past), logistics, data sources. Asked directly, not assumed from how experienced you sound.
 2. **Benchmark** — before the first workout is prescribed, it establishes real current numbers for whatever the plan will center on (reps, load, pace), preferring a safer submaximal test or an uploaded data source over a self-reported guess or a risky true-max test.
 3. **Plan** — only now does it discuss the actual training block.
+4. **Track** - receive updates in chat or from APIs, adjust training and support you throughout. 
 
 ## Installation
 
