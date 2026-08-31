@@ -43,6 +43,15 @@ Once installed, just start talking to Claude about your training goal — the sk
 
 Neither is required to start. The skill degrades gracefully and will ask for manual reporting or screenshots if no data connector is available.
 
+## Other platforms
+
+This is a Claude Skill specifically — `SKILL.md`'s frontmatter and progressive-disclosure loading are an Anthropic-specific mechanism, so there's no "install" step on other assistants. The procedure itself is plain markdown, though, and portable if you're willing to adapt it:
+
+- **A coding agent with real file/shell access** (OpenAI's Codex, or similar) is actually a strong fit — closer to how this skill was designed to run than consumer chat interfaces are. Point the agent at a git repo containing `SKILL.md` plus `/areas/`, `/workouts/`, `/people/` directories, reference `SKILL.md` from that agent's repo-level instructions file (e.g. `AGENTS.md`), and have it commit its changes before the session ends. A fresh session against the same repo picks up right where the last one left off — genuine persistence, using the exact file layout this skill already assumes.
+- **ChatGPT** doesn't have an equivalent. Its Memory feature is opaque and model-summarized, not an editable file at a path the coach can point at, and a Custom GPT can't write back to its own Knowledge files from inside a conversation. The closest approximation: paste `SKILL.md`'s body into a Custom GPT's instructions, upload the templates as Knowledge, and manually download/re-upload the area file and workout logs at the start and end of each session — the human becomes the persistence layer instead of the assistant. Wiring up real automatic persistence (a Custom GPT Action calling an external API — Notion, GitHub, a small self-hosted store) is possible but is a small integration project, not a drop-in install.
+
+Either way, Setup's memory check (see `SKILL.md`) is what surfaces this limitation to the athlete directly — it asks what's actually available before running the interview, rather than assuming persistence works and finding out otherwise later.
+
 ## Files
 
 - `SKILL.md` — the actual skill. This is what Claude reads.
